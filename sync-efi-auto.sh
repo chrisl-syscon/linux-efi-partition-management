@@ -75,8 +75,11 @@ echo "All EFI partitions synchronized."
 
 # Step 2: Install GRUB and create NVRAM boot entries
 for target in "${TARGETS[@]}"; do
-    disk="${target%[0-9]*}"  # Get base disk (/dev/sdX)
-    shortname=$(basename "$disk")  # e.g., sde
+    # Get the disk containing the target partition
+    disk="/dev/$(lsblk -no PKNAME "$target")"
+    # Get the short name of the disk (e.g., sda, sdb, nvme0n1)
+    shortname=$(basename "$disk")
+    
     boot_label="Debian Backup EFI ($shortname)"
     boot_loader='\\EFI\\debian\\grubx64.efi'
     
