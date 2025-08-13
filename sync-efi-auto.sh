@@ -4,6 +4,7 @@
 # This script is intended to be run automatically after a GRUB update, after an apt/dpkg operation or manually.
 # It can be run automatically via a post-install hook in /etc/grub.d/99sync-efi-auto
 # to ensure EFI partitions are kept in sync with the main ESP.
+# This script is licensed under the GNU General Public License v3.0 or later.
 set -euo pipefail
 
 # --- self-install grub.d shim if missing ---

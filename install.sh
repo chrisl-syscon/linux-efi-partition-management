@@ -1,6 +1,7 @@
 # install.sh
 # 2025-08-13 Christopher Long
 # Install the files necessary to manage EFI partitions after a GRUB update.
+# This script is licensed under the GNU General Public License v3.0 or later.
 
 # 1) Put your main sync script in place, the source is in the current directory
 #    (you can also use the one from the repo, but this is more convenient)

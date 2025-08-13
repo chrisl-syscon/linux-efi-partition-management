@@ -1,5 +1,6 @@
 #!/bin/bash
 # Run sync-efi-auto.sh only when a GRUB package version changed since last run.
+# This script is licensed under the GNU General Public License v3.0 or later.
 
 set -euo pipefail
 

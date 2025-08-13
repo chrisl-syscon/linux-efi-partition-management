@@ -1,6 +1,7 @@
 #!/bin/bash
 # 2025-08-13 Christopher Long
 # Install the files necessary to manage EFI partitions after a GRUB update.
+# This script is licensed under the GNU General Public License v3.0 or later.
 
 # SCRIPTS
 SYNC_EFI_SCRIPT="sync-efi-auto.sh"

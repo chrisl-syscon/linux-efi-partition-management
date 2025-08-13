@@ -2,6 +2,7 @@
 # 2025-08-13 Christopher Long
 # Fire EFI sync whenever update-grub/grub-mkconfig runs.
 # Must produce no output so it doesn't pollute grub.cfg.
+# This script is licensed under the GNU General Public License v3.0 or later.
 set -e
 
 SYNC="/usr/local/sbin/sync-efi-auto.sh"
