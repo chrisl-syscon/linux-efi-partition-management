@@ -1,0 +1,14 @@
+#!/bin/sh
+# 2025-08-13 Christopher Long
+# Fire EFI sync whenever update-grub/grub-mkconfig runs.
+# Must produce no output so it doesn't pollute grub.cfg.
+set -e
+
+SYNC="/usr/local/sbin/sync-efi-auto.sh"
+LOG="/var/log/sync-efi-auto.log"
+
+if [ -x "$SYNC" ]; then
+  "$SYNC" >>"$LOG" 2>&1 || true
+fi
+
+exit 0
