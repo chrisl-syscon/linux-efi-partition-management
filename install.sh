@@ -3,6 +3,22 @@
 # Install the files necessary to manage EFI partitions after a GRUB update.
 # This script is licensed under the GNU General Public License v3.0 or later.
 
+# Check and install efibootmgr and grub-efi-amd64
+if ! command -v efibootmgr &>/dev/null; then
+  echo "efibootmgr is not installed. Installing..."
+  sudo apt-get update
+  sudo apt-get install -y efibootmgr
+else
+  echo "efibootmgr is already installed."
+fi
+if ! command -v grub-efi-amd64 &>/dev/null; then
+  echo "grub-efi-amd64 is not installed. Installing..."
+  sudo apt-get update
+  sudo apt-get install -y grub-efi-amd64
+else
+  echo "grub-efi-amd64 is already installed."
+fi
+
 # 1) Put your main sync script in place, the source is in the current directory
 #    (you can also use the one from the repo, but this is more convenient)
 sudo install -o root -g root -m 0755 sync-efi-auto.sh /usr/local/sbin/sync-efi-auto.sh
